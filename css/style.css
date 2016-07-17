@@ -9,8 +9,8 @@ h3,
 h4,
 h5,
 h6 {
-  padding:0;
-  margin:0;
+  padding: 0;
+  margin: 0;
   font-family: "Roboto", sans-serif;
 }
 
@@ -26,7 +26,7 @@ h6 {
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: #FFF;
   line-height: 48px;
   display: inline;
 }
@@ -57,10 +57,8 @@ h2,
 h3,
 h4,
 h5 {
-  padding:10px 5%;
-
+  padding: 10px 5%;
 }
-
 
 .date-text {
   font-style: italic;
@@ -76,7 +74,6 @@ h5 {
   color: #999;
   line-height: 16px;
   float: right;
-
 }
 
 p {
@@ -99,17 +96,18 @@ a {
   line-height: 28px;
 }
 
-#skills-h3 {
-  color: #f5ae23;
+#skills-h3, #detailedskills-h3 {
+  color: purple;
   display: none;
 }
 
 .orange {
-  background-color: #f5ae23;
+  background: linear-gradient(45deg, #a09b4c, #0ec7ff);
+  color: #000000;
 }
 
 .orange-text {
-  color: #f5ae23;
+  color: purple;
 }
 
 .white-text {
@@ -120,16 +118,15 @@ a {
 .gray {
   background-color: #f3f3f3;
   padding-bottom: 10px;
-  clear:both;
+  clear: both;
 }
 
 .dark-gray {
-  background-color: #4a4a4a;
+  background-color: blanchedalmond;
 }
 
-/* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background: linear-gradient(45deg, #a09b4c, #0ec7ff);
 }
 
 .flex-box {
@@ -139,6 +136,15 @@ a {
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 10px;
+}
+
+#topContacts {
+  border-radius: 5px;
+  background-color: black;
+}
+
+#footerContacts {
+  background-color: black;
 }
 
 .center-content {
@@ -154,6 +160,7 @@ ul {
   padding: 10px;
   width: 200px;
   display: none;
+  border-radius: 50%;
 }
 
 img {
@@ -168,6 +175,10 @@ span {
   text-align: center;
 }
 
+.project-img {
+  height: 150px;
+}
+
 /* Media queries to handle various device widths */
 
 @media only screen and (max-width: 1024px) {
@@ -179,6 +190,7 @@ span {
 @media only screen and (max-width:900px) {
   .biopic {
     width: 175px;
+    border-radius: 5px;
   }
 }
 
@@ -186,10 +198,17 @@ span {
   #lets-connect {
     margin-top: 10%;
   }
+
   .biopic {
     width: 150px;
+    border-radius: 5px;
   }
+
   .welcome-message {
+    display: none;
+  }
+
+  #skillmap, #detailedskills-h3 {
     display: none;
   }
 }
@@ -208,7 +227,55 @@ span {
 
 @media only screen and (min-width: 750px) {
   #skills-h3,
-  .biopic {
+  #detailedskills-h3,
+  .biopic ,
+  #education {
     display: block;
   }
+}
+
+#skillmap .skills-wrapper {
+  margin-top: 10px;
+  overflow: auto;
+}
+
+#skillmap .skills-sunburst {
+  float: left;
+  width: 500px;
+  margin-left: -80px;
+}
+
+#skillmap .skills-sunburst svg {
+  font: 11px 'Source Sans Pro', sans-serif;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+#skillmap .skills-chart {
+  float: right;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 15px;
+  margin: 80px 20px 0 0;
+}
+
+#skillmap .skills-chart .breadcumb-text {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+#skillmap .skills-chart #skills-chart-line {
+  fill: none;
+  stroke-width: 3.5px;
+}
+
+#skillmap .skills-chart .axis path,
+#skillmap .skills-chart .axis line {
+  fill: none;
+}
+
+#skillmap .skills-chart .x-axis path,
+#skillmap .skills-chart .y-axis path {
+  stroke: #444;
+  stroke-width: 1px;
+  shape-rendering: geometricPrecision;
 }
